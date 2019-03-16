@@ -1,6 +1,8 @@
 {
   "name": "Rolezeira",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "abb66cb9"
 }
