@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   message: string;
+  logging = false;
 
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
@@ -22,11 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
   async login(user: string) {
+    this.logging = true;
     this.message = 'Trying to log in ...';
 
     const isLoggedIn = await this.authService.login(user);
     if (!isLoggedIn) {
       this.message = 'You can\'t go inside with this phone number, sorry 😐';
+      this.logging = false;
     } else {
       this.setMessage();
       const redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/tabs';

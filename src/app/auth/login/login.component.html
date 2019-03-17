@@ -15,6 +15,6 @@
     <ion-input type="tel" #phoneNumber placeholder="+55[area][seu-numero]"></ion-input>
   </ion-item>
   <ion-toolbar position="bottom">
-    <ion-button (click)="login(phoneNumber.value)" expand="block">Entrar</ion-button>
+    <ion-button [disabled]="logging" (click)="login(phoneNumber.value)" expand="block"><ion-spinner *ngIf="logging"></ion-spinner>{{ !logging ? 'Entrar' : '' }}</ion-button>
   </ion-toolbar>
 </ion-footer>
