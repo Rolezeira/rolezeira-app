@@ -1,6 +1,20 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-avatar class="avatar">
+          <img src="/assets/goiaba.jpeg">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-item>
+    <ion-label>Celular</ion-label>        
+    <ion-input type="tel" #phoneNumber placeholder="+55[area][seu-numero]"></ion-input>
+  </ion-item>
+  <ion-toolbar position="bottom">
+    <ion-button (click)="login(phoneNumber.value)" expand="block">Entrar</ion-button>
+  </ion-toolbar>
+</ion-footer>
