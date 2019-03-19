@@ -11,10 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log('AuthGuard#canActivate called');
-    const url: string = state.url;
-
-    return this.checkLogin(url);
+    return this.checkLogin(state.url);
   }
 
   checkLogin(url: string): boolean {
