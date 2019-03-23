@@ -7,11 +7,21 @@ import * as firebase from 'firebase/app';
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseAuthServiceService {
+export class FirebaseAuthService {
+
+  private _currentUser: firebase.User;
+
+  // to get currentUser always updated.
+  get currentUser(): firebase.User {
+    return this.fireAuth.auth.currentUser ? this.fireAuth.auth.currentUser : this._currentUser;
+  }
+  set currentUser(user: firebase.User) {
+    this._currentUser = user;
+  }
 
   constructor(
     private firebaseAuthentication: FirebaseAuthentication,
-    private fireAuth: AngularFireAuth
+    public fireAuth: AngularFireAuth
     ) { }
 
   async loginWithPhoneNumber(fullyPhoneNumber: string): Promise<any> {
@@ -23,4 +33,9 @@ export class FirebaseAuthServiceService {
     // make cordova-plugin login
     return this.firebaseAuthentication.signInWithVerificationId(verificationId, code);
   }
+
+  isLogged(): boolean {
+    return this.currentUser != null;
+  }
+
 }
