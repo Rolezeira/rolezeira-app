@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoggedComponent } from './logged/logged.component';
 import { AuthGuard } from './auth/auth.guard';
+import { LoggedComponent } from './views/logged/logged.component';
 
 const routes: Routes = [
   {
@@ -14,11 +14,11 @@ const routes: Routes = [
         children: [
           {
             path: 'tabs',
-            loadChildren: './tabs/tabs.module#TabsPageModule'
+            loadChildren: './views/tabs/tabs.module#TabsPageModule'
           },
           {
             path: '',
-            loadChildren: './tabs/tabs.module#TabsPageModule'
+            loadChildren: './views/tabs/tabs.module#TabsPageModule'
           }
         ]
       }
