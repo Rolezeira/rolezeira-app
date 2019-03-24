@@ -30,8 +30,8 @@ export class AuthService {
     this.isLoggedIn = false;
   }
 
-  isLogged(): boolean {
-    this.isLoggedIn = this.firebaseAuthService.isLogged();
+  async isLogged() {
+    this.isLoggedIn = await this.firebaseAuthService.isLogged();
     return this.isLoggedIn;
   }
 

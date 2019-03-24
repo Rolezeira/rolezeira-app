@@ -33,8 +33,14 @@ export class FirebaseAuthService {
     return this.firebaseAuthentication.signInWithVerificationId(verificationId, code);
   }
 
-  isLogged(): boolean {
-    return this.currentUser != null;
+  async isLogged(): Promise<boolean> {
+    if ( this.currentUser != null) { return true; }
+
+    await this.fireAuth.auth.onAuthStateChanged(user => {
+      if (user) {
+        this.currentUser = user;
+      }
+    });
   }
 
 }
