@@ -19,6 +19,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: './views/tabs/tabs.module#TabsPageModule'
+          },
+          {
+            path: 'publish',
+            loadChildren: './views/publish/publish.module#PublishPageModule'
           }
         ]
       }
