@@ -1,0 +1,77 @@
+/* Add application styles & imports to this file! */
+
+div.gridContainer {
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-rows: auto 35px 35px 35px 35px 35px 35px 35px 35px 35px;
+}
+
+div.post-avatar {
+    // background-color: black;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    padding: 5px;
+    margin: auto;
+}
+
+div.post-profile-name {
+    // background-color: yellow;
+    grid-column: 3 / span 8;
+    grid-row: 1;
+    margin: auto 0;
+}
+
+div.post-date {
+    // background-color: aquamarine;
+    grid-column: 3 / span 8;
+    grid-row: 2;
+    top: 0;
+    margin: auto 0;
+}
+
+div.post-image-content {
+    // background-color: blue;
+    grid-column: 1 / span 8;
+    grid-row: 3 / 8
+}
+
+div.post-text-content {
+    background-color: white;
+    // opacity: 0.5;
+    grid-column: 1 / span 8;
+    grid-row: 8 / 10;
+    padding: 3px;
+    color: black;
+}
+
+div.post-love {
+    // background-color: gray;
+    grid-column: 1;
+    grid-row: 10;
+}
+
+div.post-loved {
+    color: red;
+}
+
+div.post-dislike {
+    // background-color: blueviolet;
+    grid-column: 2;
+    grid-row: 10;
+}
+
+div.post-disliked {
+    color: red;
+}
+
+div.post-comment {
+    // background-color: blueviolet;
+    grid-column: 3;
+    grid-row: 10;
+}
+
+div.reactions {
+    padding: 2px;
+    margin: auto;
+    font-size: 25px;
+}

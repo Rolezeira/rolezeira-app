@@ -1,3 +1,4 @@
+import { Post } from './../../models/post';
 
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -19,7 +20,7 @@ export class FeedPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.posts = this.fireStore.collection<any>('posts').valueChanges();
+    this.posts = this.fireStore.collection<Post>('posts').valueChanges();
   }
 
   openPublishPage () {

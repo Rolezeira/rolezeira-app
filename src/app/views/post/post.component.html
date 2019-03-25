@@ -1,0 +1,29 @@
+<ion-card>
+  <div class="gridContainer">  
+    <div class="post-avatar">
+      <ion-avatar>
+        <img src="./assets/goiaba.jpeg">
+      </ion-avatar>
+    </div>
+    <div class="post-profile-name">
+      <ion-card-title>{{post.profileName}}</ion-card-title>
+    </div>
+    <div class="post-date">
+      <ion-card-subtitle>{{post.parsedCreatedAt}}</ion-card-subtitle>
+    </div>
+    <div class="post-image-content">
+      <ion-img src="./assets/san-andres-colombia-praia-mar.jpg"></ion-img>
+    </div>
+    <div class="post-text-content">{{post.text}}</div>
+    <div class="post-love reactions" [ngClass]="{'post-loved':loved}" >
+      <ion-icon *ngIf="!loved" (click)="love(loved)"  name="heart-empty"></ion-icon>
+      <ion-icon *ngIf="loved" (click)="love(loved)" name="heart"></ion-icon>
+    </div>
+    <div class="post-dislike reactions" [ngClass]="{'post-disliked':disliked}">
+      <ion-icon (click)="dislike(disliked)" name="thumbs-down"></ion-icon>
+    </div>
+    <div class="post-comment reactions">
+      <ion-icon name="text"></ion-icon>
+    </div>
+  </div>
+</ion-card>

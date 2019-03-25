@@ -14,14 +14,5 @@
     <ion-input (click)="openPublishPage();" type="text" placeholder=" e ai, o que temos de (G)old hoje?"></ion-input>
     <ion-icon name="create" item-right></ion-icon>
   </ion-item>
-  <ion-card *ngFor="let post of posts | async">
-    <ion-card-header>
-      <ion-card-subtitle>{{post.subtitle}}</ion-card-subtitle>
-      <ion-card-title>{{post.title}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      {{post.text}}
-    </ion-card-content>
-  </ion-card>
+  <app-post *ngFor="let postData of posts | async" [post]="postData"></app-post>
 </ion-content>

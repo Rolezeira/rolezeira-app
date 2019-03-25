@@ -11,6 +11,10 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
+  get user(): firebase.User {
+    return this.firebaseAuthService.currentUser;
+  }
+
   constructor(private firebaseAuthService: FirebaseAuthService) {}
 
   async login(user: string) {
