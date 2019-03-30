@@ -33,14 +33,14 @@ $ npm i
 #### to run 
 
 ```shell
-$ ionic serve --devapp #assumes all ionic environment are configured
-```
-or 
-```shell
 $ ionic cordova run android #assumes all ionic environment are configured
+```
+```shell
+$ ionic serve --devapp #assumes all ionic environment are configured
 ```
 
 -  must have Java JDK 1.8 installed
+-  must have ANDROID_HOME and JAVA_HOME configured
 -  must agree Android Plataform 27 terms on Android Studio
 -  must download the android google-services.json from your firebase project, put in root project and setting this in config.xml, like below
 ```xml
